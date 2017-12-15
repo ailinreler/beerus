@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  color: #fff;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+header .logo img {
+  height: 70px;
+  vertical-align: top;
+}
+
+.img {
+  height: 70px;
+  vertical-align: top;
+}
+
+
+.logo a {
+  line-height: 70px;
+  font-weight: 300;
+  font-size: 30px;
+}
+.logo-menu {
+  background: #2a374a;
+}
+.logo-menu h2 {
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.logo-menu .menu a {
+  display: inline-block;
+  padding: 40px 20px;
+}
+
+.logo-menu .menu a:hover {
+  border-bottom: 4px solid #ff9f1c;
+  padding-bottom: 36px;
+}
+
+.submenu {
+  background: #222b39;
+}
+
+.submenu nav a {
+  padding: 26px 20px;
+  display: inline-block;
+}
+
+.submenu nav a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN */
+.main {
+  margin: 40px 0;
+}
+
+.main .thumb {
+  margin-bottom: 20px;
+}
+
+.main .thumb img {
+  width: 100%;
+  vertical-align: top;
+}
+
+/* FOOTER */
+footer {
+  background: #222b39;
+  color: #fff;
+  padding: 40px 0;
+}
+footer .logo a {
+  color: #fff;
+  text-decoration: none;
+  text-decoration-color: #fff;
+}
+footer .nav a {
+  width: 100%;
+  display: block;
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer .nav a:hover {
+  text-decoration: underline;
+}
+
+footer .logo {
+  background: #2a374a;
+  color: #fff;
+  padding: 25px;
+  font-weight: 300;
+  border-radius: 0 30px 0 30px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* LOGIN REGISTRO */
+
+.formulario {
+  padding: 50px 0;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.formulario * {
+  box-sizing: border-box;
+}
+.flex-outer,
+.flex-inner {
+  list-style-type: none;
+  padding: 0;
+}
+
+.flex-outer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.flex-outer li,
+.flex-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-inner {
+  padding: 0 8px;
+  justify-content: space-between;
+}
+
+.flex-outer > li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.flex-outer li label,
+.flex-outer li p {
+  padding: 8px;
+  font-weight: 300;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.flex-outer > li > label,
+.flex-outer li p {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+
+.flex-outer > li > label + *,
+.flex-inner {
+  flex: 1 0 220px;
+}
+
+.flex-outer li p {
+  margin: 0;
+}
+
+.flex-outer li input:not([type='checkbox']),
+.flex-outer li textarea {
+  padding: 15px;
+  border: none;
+}
+
+.flex-outer li button {
+  margin-left: auto;
+  padding: 8px 16px;
+  border: none;
+  background: #333;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border-radius: 2px;
+}
+
+.flex-inner li {
+  width: 100px;
+}
