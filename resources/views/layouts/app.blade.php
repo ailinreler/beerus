@@ -1,80 +1,80 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beer Us</title>
+    <meta name="viewport" content="width=device-width,
+	user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,300,300italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="{{asset('css/flexboxgrid.min.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{asset('css/master.css')}}"/>
+  </head>
+  <body>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <header>
+      @if (Auth::check())
+            <li><a href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">logout</a></li>
+          @endif
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              {{ csrf_field() }}
+          </form>
+      <div class="logo-menu">
+        <div class="container">
+          <div class="row middle-xs between-xs">
+            <div class="logo col-xs-12 col-sm-4 center-xs start-sm ">
+              <img src="{{asset('images/logo.jpg')}}" class="img"alt="" href="">
+              <a href="{{ url('home') }}">BeerUs</a>
             </div>
-        </nav>
+            <nav class="menu col-xs-12 col-sm-8 center-xs end-sm">
+              <a href="{{ url('/') }}">Inicio</a>
+              <a href="{{ url('/login') }}">Iniciar Sesion</a>
+              <a href="{{ url('/register') }}">Registrate</a>
+            </nav>
+          </div>
+        </div>
+      </div>
 
-        @yield('content')
-    </div>
+      <div class="submenu">
+        <div class="container">
+          <div class="row center-xs">
+            <div class="col-xs">
+              <nav>
+                <a href="#">Muro</a>
+                <a href="#">Amigos</a>
+                <a href="#">Búsqueda</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-</body>
+    @yield('content')
+
+
+    <footer>
+      <div class="container">
+        <div class="row middle-xs between-xs">
+          <div class="col-xs-12 col-sm-4">
+            <div class="nav">
+              <a href="{{ url('home') }}">Inicio</a>
+              <a href="#">FaQ</a>
+              <a href="#">Terminos y Condiciones</a>
+              <a href="#">Contacto</a>
+            </div>
+          </div>
+
+          <div class="logo col-xs-12 col-sm-4 footlogo">
+            <img src="{{asset('images/logo.jpg')}}" class="img"alt="">
+            <a href="{{ url('home') }}">BeerUs</a>
+          </div>
+        </div>
+		</div>
+  </footer>
+
+
+  </body>
 </html>
